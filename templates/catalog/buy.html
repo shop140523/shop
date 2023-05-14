@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "My purchases" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "My purchases" %}</h2>
+{% if sale.count > 0 %}
+{% for s in sale %}	
+<div class="row justify-content-center">
+		<div class="card" style="width: 100%; margin-bottom: 10px">
+			<div class="card-header">
+				<h6>{{ s.saleday | date:"d.m.Y"}}</h6>
+				<h5>{{ s.catalog.category }}</h5>
+			</div>
+			<div class="card-body">			
+				<div class="row">
+					<div class="col-md-2">
+						{% if s.catalog.photo.url != None %}
+							{% if s.catalog.photo.url == "/media/images/product1.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product1.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product2.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product2.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product3.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product3.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product4.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product4.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product5.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product5.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product6.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product6.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product7.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product7.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product8.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product8.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product9.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product9.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product10.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product10.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product11.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product11.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product12.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product12.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product13.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product13.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product14.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product14.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product15.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product15.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product16.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product16.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product17.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product17.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product18.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product18.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product19.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product19.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product20.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product20.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product21.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product21.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product22.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product22.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product23.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product23.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product24.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product24.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% elif s.catalog.photo.url == "/media/images/product25.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product25.jpg' %}" alt="{{ s.catalog.title }}" >    
+							{% else %}
+								{% if s.catalog.photo.url != None %}
+									<img style="width:100%; max-width:200px;" src="{{ s.catalog.photo.url}}" alt="{{ s.catalog.title }}" >
+								{% endif %}
+							{% endif %}
+						{% endif %}
+					</div>
+					<div class="col-md-4">
+						<h5 class="card-title"><strong>{{ s.catalog.title }}</strong></h5>
+					</div>
+					<div class="col-md-6">
+						<form class="form-vertical" method="post" style="width: 100%" name="reviewForm">
+							{% csrf_token %}
+							<h5 class="card-title"><strong>{{ s.quantity }}ˣ{{ s.price }}</strong> 〒</h5>
+							<h4 class="card-title"><strong>{{ s.total }}</strong> 〒</h4>
+							<input hidden type="text" name="sale_id" size="0" value="{{ s.id }}">							
+							<!--<div id="div_review{{ s.id }}" {% if s.rating > 0 %}{% else %} hidden {% endif %} >-->
+							<div id="div_review{{ s.id }}" >
+								<div class="control-group">
+									<label class="control-label"><strong>{% trans "Rating" %}:</strong></label>
+									<input required type="number" id="rating" name="rating" value="{{ s.rating }}" min="1" max="5"/>
+								</div>
+								<div class="control-group">
+									<label class="control-label"><strong>{% trans "Rating details" %}:</strong></label>								
+									<textarea required id="rating_details" name="rating_details" style="width:100%;" rows="3">{{ s.details }}</textarea>
+								</div>
+								<div class="form-actions" style="margin-bottom: 10px">
+									<button type="submit" name="review" class="btn btn-outline-success">{% if s.rating > 0 %} {% trans "Change Review" %} {% else %} {% trans "Review" %}{% endif %}</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>					
+			</div>
+			<div class="card-footer text-muted">
+				
+			</div>
+		</div>		
+</div>
+{% endfor %}
+{% endif %}
+<script>
+	// Показ поля для ввода отзыва
+	/*
+	function show_review(id) {
+		var div = document.getElementById('div_review'+id);
+		div.style.visibility ='visible'
+		//console.log("Возможность отправить отзыв теперь видимый");
+		var input = document.getElementById('btn_show_review'+id);
+		input.style.visibility ='hidden'
+		//console.log("Кнопка сокрыта");
+	}
+	*/
+</script>
+{% endblock content %}

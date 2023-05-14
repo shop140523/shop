@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}{% trans 'App Name' %}{% endblock title %}
+{% block content %}
+<p>{% trans 'Logged out!' %}</p>
+<a href="{% url 'login'%}">{% trans 'Login again' %}</a>
+{% endblock %}

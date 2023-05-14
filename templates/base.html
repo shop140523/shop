@@ -1,0 +1,125 @@
+{% load static %}
+{% load i18n %}
+<html>
+<head>
+	<!-- Элемент meta определяет метаданные документа. -->
+	<meta charset="utf-8">
+	<!-- Мета-теги для адаптивной вёрстки -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Дополнительный JavaScript; Bootstrap в связке с Popper-->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<!--  jQuery-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	
+	<!-- Bootstrap CSS, JavaScript. Точнее - им требуются jQuery, Popper.js -->
+	<!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" crossorigin="anonymous"> -->
+	<!-- <script defer src="{% static 'js/popper.min.js' %}"  crossorigin="anonymous"></script> -->
+	<!-- <script defer src="{% static 'js/bootstrap.min.js' %}" crossorigin="anonymous"></script> -->
+	<!-- <script defer src="{% static 'js/jquery.min.js' %}"  ></script> -->
+	
+	<!-- Стили пользователя-->
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+	<!-- SELECT (с поиском)	https://github.com/harvesthq/chosen/blob/master/LICENSE.md -->
+	<link rel="stylesheet" href="{% static 'css/choosen.css' %}" />
+	<script src="{% static 'js/choosen.js' %}"></script>	
+	<!-- Favicon 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<!-- Заголовок документа -->
+	<title>{% block title %}Default title{% endblock title %}</title>
+</head>
+	<nav class="navbar navbar-expand-lg navbar-light justify-content-center">	
+		<div class="container">
+			<a class="navbar-brand" href="{{ HTTP_HOST }}/">{% trans "Home" %}</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainMenu">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-link">
+						<a class="dropdown-item" href="{% url 'catalog_list' %}">{% trans "Catalog" %}</a>
+					</li>
+					<li class="nav-link">
+						<a class="dropdown-item" href="{% url 'news_list' %}">{% trans "newss" %}</a>
+					</li>
+					<li class="nav-link">
+						<a class="dropdown-item" href="{% url 'contact' %}">{% trans "Contacts" %}</a>          
+					</li>
+					{% if user.is_authenticated %}
+					<li class="nav-link dropdown">
+						<a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							{{ user.username }} 
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">						
+						{% if request.user.groups.all.0.name == "Managers" %}
+									<a class="dropdown-item" href="{% url 'category_index' %}">{% trans "categorys" %}</a>
+									<a class="dropdown-item" href="{% url 'catalog_index' %}">{% trans "catalog" %}</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="{% url 'delivery_list' %}">{% trans "delivery" %}</a>
+									<a class="dropdown-item" href="{% url 'report_index' %}">{% trans "reports" %}</a>
+									<div class="dropdown-divider"></div>										
+									<a class="dropdown-item" href="{% url 'news_index' %}">{% trans "newss" %}</a>
+									<div class="dropdown-divider"></div>
+								{% else %}
+									<a class="dropdown-item" href="{% url 'buy' %}">{% trans "My purchases" %}</a>
+									<a class="dropdown-item" href="{% url 'basket' %}">{% trans "Basket" %}</a>
+									<a class="dropdown-item" href="{% url 'delivery_list' %}">{% trans "delivery" %}</a>
+									<div class="dropdown-divider"></div>
+								{% endif %}
+								<a class="dropdown-item" href="{% url 'my_account' %}">{% trans "My account" %}</a>
+								<a class="dropdown-item" href="{% url 'password_change' %}">{% trans "Change password" %}</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'logout'%}?next={{request.path}}">{% trans "Log out" %}</a>
+						</ul>
+					</li>
+					{% else %}
+					<form class="form-inline ml-auto">
+						<a href="{% url 'login' %}" class="btn btn-outline-secondary">{% trans "Log In" %}</a>
+						<a href="{% url 'signup' %}" class="btn btn-primary ml-2">{% trans "Sign up" %}</a>
+					</form>
+					{% endif %}
+					<!-- <form action="{% url 'set_language' %}" method="post"> -->
+						<!-- {% csrf_token %} -->
+						<!-- <input name="next" type="hidden" value="{{ redirect_to }}" /> -->
+						<!-- {% get_current_language as LANGUAGE_CODE %} -->
+						<!-- {% get_available_languages as LANGUAGES %} -->
+						<!-- {% get_language_info_list for LANGUAGES as languages %} -->
+						<!-- {% for language in languages %} -->
+						<!-- <button type="submit" class="btn btn-outline-info" name="language" value="{{ language.code }}"> -->
+							<!-- {{ language.code }} -->
+						<!-- </button> -->
+						<!-- {% endfor %} -->
+					<!-- </form> -->
+				</ul>      
+			</div>
+		</div>
+	</nav>
+<body>
+	<div class="container">
+		<h1>{% block header %}{% endblock header %}</h1>
+		{% block content%}{% endblock content %}
+	</div>
+</body>
+<footer class="container-fluid text-center bg-lightgray">
+	<div class="copyrights">
+		<img src="{% static 'images/logo.png' %}" alt="logo" style="height:144px; padding: 10px;">
+	</div>
+</footer>
+
+<!-- Пагинация таблиц (Постраничный вывод) https://datatables.net/ -->
+<script src="{% static 'js/datatables.js' %}"></script>
+
+<!-- <link rel="stylesheet" href="{% static 'css/jquery.dataTables.min.css' %}"> -->
+<!-- <script src= "{% static 'js/jquery.dataTables.min.js' %}"></script> -->
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+
+<!-- fancyBox CSS -->
+<link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+<!-- fancyBox JS -->
+<script src="{% static 'js/jquery.fancybox.min.js' %}" > </script>
+
+</html>

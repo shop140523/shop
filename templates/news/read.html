@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "news" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h4>{{ news.title }}</h4>			
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-8">				
+					<p>{{ news.details }}</p>					
+				</div>
+				<div class="col-md-4">
+					{% if news.photo.url == "/media/images/news1.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news1.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% elif news.photo.url == "/media/images/news2.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news2.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% elif news.photo.url == "/media/images/news3.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news3.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% elif news.photo.url == "/media/images/news4.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news4.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% elif news.photo.url == "/media/images/news5.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news5.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% elif news.photo.url == "/media/images/news6.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news6.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% elif news.photo.url == "/media/images/news7.jpeg" %}
+						<img style="width:100%; max-width:400px;" src="{% static 'images/news7.jpeg' %}" alt="{{ news.title }}" title="{{ news.details }}">    
+					{% else %}
+						{% if news.photo.url != None %}
+							<img style="width:100%; max-width:400px;" src="{{ news.photo.url}}" alt="{{ news.title }}" title="{{ news.details }}">
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>				
+		</div>
+		<div class="card-footer">				
+			<p>{{ news.daten }}</p>			
+		</div>		
+	</div>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" onclick="history.back()">{% trans "Back" %}</a>    	
+</div>
+
+{% endblock content %}

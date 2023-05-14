@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "catalog" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "catalog" %}</h2>
+{% if catalog.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "category_title" %}</th>
+				<th>{% trans "catalog_title" %}</th>
+				<th>{% trans "catalog_details" %}</th>
+				<th>{% trans "price" %}</th>
+				<th>{% trans "photo" %}</th>
+				<th><a href="{% url 'catalog_create' %}">{% trans "Create" %}</a></th>					
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in catalog %}
+			<tr>
+				<td>
+					<p>{{ p.category }}</p>
+				</td>
+				<td>
+					<p>{{ p.title }}</p>
+				</td>
+				<td>
+					<p>{{ p.details }}</p>
+				</td>
+				<td>
+					<p>{{ p.price }}</p>
+				</td>
+				<td>
+					{% if p.photo.url != None %}					
+						{% if p.photo.url == "/media/images/product1.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product1.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product2.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product2.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product3.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product3.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product4.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product4.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product5.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product5.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product6.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product6.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product7.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product7.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product8.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product8.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product9.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product9.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product10.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product10.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product11.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product11.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product12.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product12.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product13.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product13.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product14.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product14.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product15.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product15.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product16.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product16.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product17.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product17.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product18.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product18.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product19.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product19.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product20.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product20.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product21.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product21.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product22.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product22.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product23.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product23.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product24.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product24.jpg' %}" alt="{{ p.title }}" >    
+						{% elif p.photo.url == "/media/images/product25.jpg" %}
+							<img style="width:100%; max-width:200px;" src="{% static 'images/product25.jpg' %}" alt="{{ p.title }}" >    
+						{% else %}
+							{% if p.photo.url != None %}
+								<img style="width:100%; max-width:200px;" src="{{ p.photo.url}}" alt="{{ p.title }}" >
+							{% endif %}
+						{% endif %}								
+					{% endif %}	
+				</td>
+				<td>
+					<a href="{% url 'catalog_edit' p.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'catalog_read' p.id %}">{% trans "Read" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'catalog_delete' p.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'catalog_create' %}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

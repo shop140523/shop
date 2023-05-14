@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "newss" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<div class="div-width-100-text-center">
+	<h3>{% trans "newss" %}</h3>
+</div>
+{% if news.count > 0 %}
+<div class="row">
+	<table id="myTable" style="width:100%">
+		<thead>
+			<tr>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in news %}
+			<tr>
+				<td>
+					<div class="card">
+						<div class="card-header">
+							<h5>{{ n.title }}</h5>
+						</div>
+						<div class="card-body">					
+							<div class="row">
+								<div class="col-md-8">
+									<p>{{ n.details }}</p>
+								</div>								
+								<div class="col-md-4">
+									{% if n.photo.url == "/media/images/news1.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news1.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% elif n.photo.url == "/media/images/news2.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news2.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% elif n.photo.url == "/media/images/news3.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news3.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% elif n.photo.url == "/media/images/news4.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news4.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% elif n.photo.url == "/media/images/news5.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news5.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% elif n.photo.url == "/media/images/news6.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news6.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% elif n.photo.url == "/media/images/news7.jpeg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/news7.jpeg' %}" alt="{{ n.title }}" title="{{ n.details }}">    
+									{% else %}
+										{% if n.photo.url != None %}
+											<img style="width:100%; max-width:400px;" src="{{ n.photo.url}}" alt="{{ n.title }}" title="{{ n.details }}">
+										{% endif %}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p><strong>{{ n.daten | date:"d.m.Y H:i" }}</strong><p>
+						</div>
+					</div>
+				</td>	
+			</tr>
+			{% endfor %}	
+		</tbody>
+	</table>	
+</div>
+{% endif %}
+{% endblock content %}
+

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "delivery" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">			
+		</div>
+		<div class="card-body">
+			<table>
+				<tr>
+					<td><strong>{% trans "delivery_title" %}</strong>&nbsp:</td>
+					<td>{{ delivery.sale }}</td>
+				</tr>
+				<tr>
+					<td><strong>{% trans "deliveryday" %}</strong>&nbsp:</td>
+					<td>{{ delivery.deliveryday | date:"d.m.Y" }}</td>
+				</tr>
+				<tr>
+					<td><strong>{% trans "movement" %}</strong>&nbsp:</td>
+					<td>{{ delivery.movement }}</td>
+				</tr>
+				<tr>
+					<td><strong>{% trans "delivery_details" %}</strong>&nbsp:</td>
+					<td>{{ delivery.details }}</td>
+				</tr>
+			</table>			
+		</div>
+		<div class="card-footer">				
+		</div>		
+	</div>
+	<br>
+	<a class="btn btn-outline-info" style="width:100px" href="{% url 'delivery_index' sale_id %}">{% trans "Back" %}</a>    	
+</div>
+{% endblock content %}

@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Basket" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Basket" %}</h2>
+{% if basket.count > 0 %}
+{% for b in basket %}	
+<div class="row justify-content-center">
+		<div class="card" style="width: 100%">
+			<div class="card-header">
+				<h5>{{ b.catalog.category }}</h5>
+			</div>							
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-2">
+						{% if b.catalog.photo.url != None %}
+							{% if b.catalog.photo.url == "/media/images/product1.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product1.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product2.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product2.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product3.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product3.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product4.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product4.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product5.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product5.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product6.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product6.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product7.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product7.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product8.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product8.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product9.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product9.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product10.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product10.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product11.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product11.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product12.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product12.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product13.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product13.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product14.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product14.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product15.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product15.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product16.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product16.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product17.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product17.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product18.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product18.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product19.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product19.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product20.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product20.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product21.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product21.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product22.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product22.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product23.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product23.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product24.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product24.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% elif b.catalog.photo.url == "/media/images/product25.jpg" %}
+								<img style="width:100%; max-width:200px;" src="{% static 'images/product25.jpg' %}" alt="{{ b.catalog.title }}" >    
+							{% else %}
+								{% if b.catalog.photo.url != None %}
+									<img style="width:100%; max-width:200px;" src="{{ b.catalog.photo.url}}" alt="{{ b.catalog.title }}" >
+								{% endif %}
+							{% endif %}		
+						{% endif %}
+					</div>
+					<div class="col-md-8">
+						<h5 class="card-title"><strong>{{ b.catalog.title }}</strong></h5>
+					</div>
+					<div class="col-md-2">
+						<h6 class="card-title"><strong>{{ b.quantity }}ˣ{{ b.price }}</strong> 〒</h6>
+						<form method="post" name="plusminusForm">
+							{% csrf_token %}						
+							<input hidden type="text" name="basket_id" size="0" value="{{ b.id }}">
+							<input hidden type="text" name="quantity" size="0" value="{{ b.quantity }}">
+							<button type="submit" name="btn_plus" class="btn btn-outline-success">+</button>
+							<button type="submit" name="btn_minus" class="btn btn-outline-success">-</button>
+						</form>
+						<h4 class="card-title"><strong>{{ b.total }}</strong> 〒</h4>
+						<a onclick="return confirm('Удалить запись?')" class="btn btn-outline-danger" href="{% url 'basket_delete' b.id %}">{% trans "Delete" %}</a>
+					</div>
+				</div>					
+			</div>
+			<div class="card-footer text-muted">
+				
+			</div>
+		</div>		
+</div>
+{% endfor %}
+{% if basket_total > 0 %}
+	<div class="row justify-content-center" id="row_go_payment">
+		<div class="card" style="width: 100%">
+			<div class="card-header text-center" >
+				<h3 class="card-title"><strong>{% trans "Basket total" %} - {{ basket_total }}</strong> 〒</h3>
+			</div>
+			<div class="card-body">
+				<div class="row justify-content-center">	
+					<input id="btn_go_payment" type="button" class="btn btn-outline-primary" value="{% trans "Go payment" %}">											
+				</div>
+			</div>			
+		</div>		
+	</div>		
+		
+	<div class="row justify-content-center" id="div_payment" style="visibility: hidden">
+		<form class="form-horizontal" method="post" style="width: 100%" name="paymentForm">	
+		{% csrf_token %}
+		<div class="card" style="width: 100%">
+			<div class="card-header text-center" >
+				<h3>{% trans "Payment method" %}</h3>
+				<h3 class="card-title"><strong>{% trans "Basket total" %} - {{ basket_total }}</strong> 〒</h3>
+			</div>
+			<div class="card-body">			
+				<div class="row">	
+					<div class="col-md-6">	
+						<div class="controls">
+							<input type="radio" id="paymentCard" name="paymentMode" value="card" checked>
+							<label for="paymentCard">{% trans "Card" %}</label>						
+						</div>
+						<div class="controls">
+							<input type="radio" id="paymentCash" name="paymentMode" value="cash" >
+							<label for="paymentCash">{% trans "In cash" %}</label>						
+						</div>					
+					</div>					
+					<div class="col-md-6">								
+						<div class="card" style="margin:10px;">
+							<div class="card-body">
+									<img src="{% static "images/card.png" %}" style="width:100%">
+									<h5 class="card-title">Не вводите данные реальной карты</h5>
+									<div>
+										<label for="card-number">{% trans "Card number" %}</label>
+										<input type="text" required minlength="4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="card_number_1" name="card_number_1" maxlength="4" size="4" value=""/>
+										<input type="text" required minlength="4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="card_number_2" name="card_number_2" maxlength="4" size="4" value=""/>
+										<input type="text" required minlength="4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="card_number_3" name="card_number_3" maxlength="4" size="4" value=""/>
+										<input type="text" required minlength="4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="card_number_4" name="card_number_4" maxlength="4" size="4" value=""/>
+									</div>
+									<div>
+										<label>{% trans "Card holder" %}</label>
+										<input type="text" required id="card_holder" name="card_holder" size="30" value=""/>
+									</div>
+									<div>
+										<label>{% trans "Expiration date" %}</label>
+										<input type="text" required minlength="2" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="month" name="month" maxlength="2" size="3" placeholder="MM" value=""/>
+										<input type="text" required minlength="4" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="year" name="year" maxlength="4" size="5" placeholder="YYYY" value=""/>
+										<label>CCV</label>
+										<input required type="password" minlength="3" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="card_ccv" name="card_ccv" maxlength="3" size="3"/>
+									</div>			
+								
+							</div>	
+						</div>
+					</div>					
+				</div>					
+				<hr>			
+				<div class="row justify-content-center">				
+					<button type="submit" name="buy" class="btn btn-outline-success" style="width:100px" >{% trans "Buy" %}</button>
+					<a class="btn btn-outline-info" style="width:100px" href="{% url 'catalog_list' %}">{% trans "Back" %}</a>
+				</div>		
+			</div>		
+		</div>	
+		</form>
+	</div>			
+{% endif %}
+
+{% endif %}
+<script>
+	// Показ способа оплаты
+	btn_go_payment.onclick = function() {
+		var div = document.getElementById('div_payment');
+		div.style.visibility ='visible'
+		//console.log("Cпособ оплаты теперь видимый");
+		var row = document.getElementById('row_go_payment');
+		row.style.visibility ='hidden'
+		row.style.height = 0;
+		//console.log("Кнопка перехода к выбору способа оплаты сокрыта");
+	};  
+	// Опредление способа оплаты	
+	var payment_mode = document.paymentForm.paymentMode;
+	for (var i = 0; i < payment_mode.length; i++) {
+		payment_mode[i].addEventListener('change', function() {        
+			if(payment_mode[0].checked){
+				// При оплате карточкой надо ввести данные карточки 
+				//console.log("Card");
+				document.getElementById('card_number_1').setAttribute("required", "");
+				document.getElementById('card_number_2').setAttribute("required", "");
+				document.getElementById('card_number_3').setAttribute("required", "");
+				document.getElementById('card_number_4').setAttribute("required", "");
+				document.getElementById('card_holder').setAttribute("required", "");
+				document.getElementById('card_holder').setAttribute("required", "");
+				document.getElementById('month').setAttribute("required", "");
+				document.getElementById('year').setAttribute("required", "");
+				document.getElementById('card_ccv').setAttribute("required", "");
+			}
+			if(payment_mode[1].checked){
+				// При оплате наличными данные карточки не нужны
+				//console.log("Cash");
+				document.getElementById('card_number_1').removeAttribute("required"); 
+				document.getElementById('card_number_2').removeAttribute("required"); 
+				document.getElementById('card_number_3').removeAttribute("required"); 
+				document.getElementById('card_number_4').removeAttribute("required"); 
+				document.getElementById('card_holder').removeAttribute("required"); 
+				document.getElementById('card_holder').removeAttribute("required"); 
+				document.getElementById('month').removeAttribute("required"); 
+				document.getElementById('year').removeAttribute("required"); 
+				document.getElementById('card_ccv').removeAttribute("required"); 				
+			}		
+		});
+	}
+</script>
+{% endblock content %}
+

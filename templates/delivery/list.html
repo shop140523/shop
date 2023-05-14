@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "deliverys" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Sale" %}</h2>
+<h2>{% trans "deliverys" %}</h2>
+<!--
+<h4>{{ view_sale.saleday| date:"d.m.Y"  }}</h4>
+<h4>{{ view_sale.username }}</h4>
+<h4>{{ view_sale.category }}</h4>
+<h4>{{ view_sale.title }}</h4>
+-->
+{% if view_sale.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "saleday" %}</th>
+				<th>{% trans "username" %}</th>				
+				<th>{% trans "category" %}</th>
+				<th>{% trans "title" %}</th>
+				<th>{% trans "final" %}</th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for v in view_sale %}
+			<tr>
+				<td>{{ v.saleday | date:"d.m.Y" }}</td>
+				<td>{{ v.username }}</td>				
+				<td>{{ v.category }}</td>
+				<td>{{ v.title }}</td>
+				<td>
+					{% if  v.final != None %}
+						{{ v.final }}							
+					{% endif %}
+				</td>
+				<td>
+					<a href="{% url 'delivery_index' v.id %}">{% trans "delivery" %}</a>					
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

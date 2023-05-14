@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Change" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "category" %}</h2>
+<form method="POST" enctype="multipart/form-data" novalidate>	
+	{% csrf_token %}
+	<table>
+        {{ form.as_p }}
+    </table>
+	<br>
+    <button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>
+	<a class="btn btn-outline-info" style="width:100px" href="{% url 'category_index' %}">{% trans "Back" %}</a>    
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

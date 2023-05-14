@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "reports" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "reports" %}</h2>
+
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+	<li class="nav-item" role="presentation">
+		<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">{% trans "Catalog" %}</button>
+	</li>
+	<li class="nav-item" role="presentation">
+		<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">{% trans "Sale" %}</button>
+	</li>
+	<li class="nav-item" role="presentation">
+		<button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="true">{% trans "delivery" %}</button>
+	</li>
+	<li class="nav-item" role="presentation">
+		<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab" aria-controls="tab4" aria-selected="false">{% trans "Reviews" %}</button>
+	</li>			
+</ul>
+<div class="tab-content" id="myTabContent">
+	<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
+		<div class="row">
+			<h1>{% trans "Catalog" %}</h1>
+		</div>
+		{% if catalog.count > 0 %}
+			<div class="row">
+				<table id="myTable" class="table-manager" style="width:100%">
+					<thead>
+						<tr>
+							<th>{% trans "Category" %}</th>
+							<th>{% trans "Title" %}</th>
+							<th>{% trans "Price" %}</th>
+							<th>{% trans "Photo" %}</th>											
+						</tr>
+					</thead>
+					<tbody>
+						{% for c in catalog %}
+						<tr>
+							<td><p>{{ c.category }}</p></td>
+							<td><p>{{ c.title }}<br>{% if c.avg_rating != None %} {{ c.avg_rating | floatformat:1 }} <div class="Stars" style='--rating: {{ c.avg_rating| stringformat:".1f" }};'></div>{% endif %}</p></td>
+							<td><p>{{ c.price }} 〒</p></td>
+							<td>
+								{% if c.photo.url != None %}
+									{% if c.photo.url == "/media/images/product1.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product1.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product2.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product2.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product3.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product3.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product4.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product4.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product5.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product5.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product6.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product6.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product7.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product7.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product8.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product8.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product9.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product9.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product10.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product10.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product11.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product11.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product12.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product12.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product13.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product13.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product14.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product14.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product15.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product15.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product16.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product16.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product17.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product17.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product18.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product18.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product19.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product19.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product20.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product20.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product21.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product21.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product22.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product22.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product23.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product23.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product24.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product24.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product25.jpg" %}
+										<img style="width:100%; max-width:300px;" src="{% static 'images/product25.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% else %}
+										{% if c.photo.url != None %}
+											<img style="width:100%; max-width:300px;" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
+										{% endif %}
+									{% endif %}
+								{% endif %}	
+							</td>				
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}
+	</div>
+	<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">
+		<div class="row">
+			<h1>{% trans "Sale" %}</h1>
+		</div>
+		{% if sale.count > 0 %}		
+			<div class="row">
+				<table id="myTable" class="table-manager" style="width:100%">
+					<thead>
+						<tr>
+							<th>{% trans "Saleday" %}</th>
+							<th>{% trans "username" %}</th>
+							<th>{% trans "Category" %}</th>
+							<th>{% trans "Title" %}</th>
+							<th>{% trans "Price" %}</th>
+							<th>{% trans "Quantity" %}</th>
+							<th>{% trans "Total" %}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for s in sale %}
+						<tr>
+							<td>{{ s.saleday | date:"d.m.Y"}}</td>
+							<td>{{ s.username }}</td>
+							<td>{{ s.category }}</td>
+							<td>{{ s.title }}</td>
+							<td>{{ s.price }}</td>
+							<td>{{ s.quantity }}</td>
+							<td>{{ s.total }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}				
+	</div>
+	<div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="home-tab">
+		<div class="row">
+			<h1>{% trans "delivery" %}</h1>
+		</div>
+		{% if delivery.count > 0 %}		
+			<div class="row">
+				<table id="myTable" class="table-manager" style="width:100%">
+					<thead>
+						<tr>
+							<th>{% trans "deliveryday" %}</th>
+							<th>{% trans "movement" %}</th>
+							<th>{% trans "delivery_details" %}</th>
+							<th>{% trans "saleday" %}</th>
+							<th>{% trans "username" %}</th>
+							<th>{% trans "category" %}</th>
+							<th>{% trans "title" %}</th>				
+						</tr>
+					</thead>
+					<tbody>
+						{% for d in delivery %}
+						<tr>
+							<td>{{ d.deliveryday | date:"d.m.Y"}}</td>
+							<td>{{ d.movement }}</td>
+							<td>{{ d.details }}</td>
+							<td>{{ d.sale.saleday | date:"d.m.Y"}}</td>
+							<td>{{ d.sale.user.username }}</td>
+							<td>{{ d.sale.catalog.category.title }}</td>
+							<td>{{ d.sale.catalog.title }}</td>				
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}					
+	</div>
+	<div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="profile-tab">
+		<div class="row">
+			<h1>{% trans "Reviews" %}</h1>
+		</div>
+		{% if review.count > 0 %}		
+			<div class="row">
+				<table id="myTable" class="table-manager" style="width:100%">
+					<thead>
+						<tr>
+							<th>{% trans "Saleday" %}</th>
+							<th>{% trans "username" %}</th>
+							<th>{% trans "Category" %}</th>
+							<th>{% trans "Title" %}</th>
+							<th>{% trans "rating" %}</th>
+							<th>{% trans "review_details" %}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for r in review %}
+						{% if r.rating != None %}
+						<tr>
+							<td>{{ r.saleday | date:"d.m.Y"}}</td>
+							<td>{{ r.username }}</td>
+							<td>{{ r.category }}</td>
+							<td>{{ r.title }}</td>
+							<td>{{ r.rating }}</td>
+							<td>{{ r.details }}</td>
+						</tr>
+						{% endif %}
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}				
+	</div>
+</div>		
+{% endblock content %}

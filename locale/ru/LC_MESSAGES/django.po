@@ -1,0 +1,598 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-14 12:09+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
+"100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\product\forms.py:26 .\product\models.py:32 .\product\models.py:65
+#: .\templates\catalog\index.html:13
+msgid "category_title"
+msgstr "Название категории"
+
+#: .\product\forms.py:33
+msgid "Value must start with a capital letter"
+msgstr "Значение должно начинаться с заглавной буквы"
+
+#: .\product\forms.py:49 .\product\models.py:141
+#: .\templates\category\create.html:6 .\templates\category\edit.html:6
+#: .\templates\category\read.html:6 .\templates\delivery\list.html:21
+#: .\templates\report\index.html:160
+msgid "category"
+msgstr "Категория"
+
+#: .\product\forms.py:50 .\product\models.py:44 .\product\models.py:66
+#: .\product\models.py:142 .\templates\catalog\index.html:14
+msgid "catalog_title"
+msgstr "Название"
+
+#: .\product\forms.py:51 .\product\forms.py:83
+#: .\templates\catalog\details.html:19
+msgid "details"
+msgstr "Описание товара"
+
+#: .\product\forms.py:52 .\product\models.py:46 .\product\models.py:68
+#: .\product\models.py:88 .\product\models.py:109 .\product\models.py:144
+#: .\templates\catalog\index.html:16
+msgid "price"
+msgstr "Цена"
+
+#: .\product\forms.py:60
+msgid "Quantity must be greater than zero"
+msgstr "Количество должно быть больше нуля"
+
+#: .\product\forms.py:69
+msgid "Price must be greater than zero"
+msgstr "Цена должна быть больше нуля"
+
+#: .\product\forms.py:82 .\product\models.py:178
+#: .\templates\delivery\index.html:19 .\templates\delivery\read.html:22
+#: .\templates\report\index.html:156
+msgid "movement"
+msgstr "Перемещение"
+
+#: .\product\forms.py:92
+msgid "Cannot be greater than the current date"
+msgstr "Не может быть больше текущей даты"
+
+#: .\product\forms.py:112
+msgid "Wrong date and time format"
+msgstr "Неправильный формат даты и времени"
+
+#: .\product\models.py:45 .\product\models.py:67
+#: .\templates\catalog\index.html:15
+msgid "catalog_details"
+msgstr "Описание товара"
+
+#: .\product\models.py:47 .\product\models.py:69 .\product\models.py:143
+#: .\templates\catalog\index.html:17
+msgid "photo"
+msgstr "Фотография"
+
+#: .\product\models.py:64
+msgid "category_id"
+msgstr ""
+
+#: .\product\models.py:70
+msgid "avg_rating"
+msgstr "Средняя оценка"
+
+#: .\product\models.py:86
+msgid "basketday"
+msgstr "Дата"
+
+#: .\product\models.py:89 .\product\models.py:110 .\product\models.py:145
+msgid "quantity"
+msgstr "Количество"
+
+#: .\product\models.py:107 .\product\models.py:139
+#: .\templates\delivery\list.html:19 .\templates\report\index.html:158
+msgid "saleday"
+msgstr "Дата продажи"
+
+#: .\product\models.py:112 .\product\models.py:148
+#: .\templates\report\index.html:194
+msgid "rating"
+msgstr "Оценка"
+
+#: .\product\models.py:113 .\product\models.py:149
+#: .\templates\report\index.html:195
+msgid "review_details"
+msgstr "Детали отзыва"
+
+#: .\product\models.py:138 .\templates\delivery\list.html:20
+#: .\templates\report\index.html:121 .\templates\report\index.html:159
+#: .\templates\report\index.html:191
+msgid "username"
+msgstr "Пользователь"
+
+#: .\product\models.py:140
+msgid "catalog_id"
+msgstr ""
+
+#: .\product\models.py:146
+msgid "total"
+msgstr "Сумма"
+
+#: .\product\models.py:147
+msgid "user_id"
+msgstr ""
+
+#: .\product\models.py:150 .\templates\delivery\list.html:23
+msgid "final"
+msgstr "Последнее движение"
+
+#: .\product\models.py:172
+msgid "Application accepted for processing"
+msgstr "Заявка принята в обработку"
+
+#: .\product\models.py:173
+msgid "Goods in transit"
+msgstr "Заказ в пути"
+
+#: .\product\models.py:174
+msgid "The application is closed, the goods have been delivered"
+msgstr "Заявка закрыта, заказ доставлен"
+
+#: .\product\models.py:177 .\templates\delivery\index.html:18
+#: .\templates\delivery\read.html:18 .\templates\report\index.html:155
+msgid "deliveryday"
+msgstr "Дата"
+
+#: .\product\models.py:179 .\templates\delivery\index.html:20
+#: .\templates\delivery\read.html:26 .\templates\report\index.html:157
+msgid "delivery_details"
+msgstr "Детали доставки"
+
+#: .\product\models.py:197 .\templates\news\index.html:12
+msgid "daten"
+msgstr "Дата"
+
+#: .\product\models.py:198
+msgid "title_news"
+msgstr "Заголовок новости"
+
+#: .\product\models.py:199
+msgid "details_news"
+msgstr "Детали новости"
+
+#: .\product\models.py:200
+msgid "photo_news"
+msgstr "Фотография"
+
+#: .\product\views.py:197
+msgid "Item added to basket"
+msgstr "Товар добавлен в корзину"
+
+#: .\templates\base.html:35
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\base.html:42 .\templates\report\index.html:11
+#: .\templates\report\index.html:26
+msgid "Catalog"
+msgstr "Каталог"
+
+#: .\templates\base.html:45 .\templates\base.html:63
+#: .\templates\index.html:218 .\templates\news\index.html:3
+#: .\templates\news\index.html:6 .\templates\news\list.html:4
+#: .\templates\news\list.html:8
+msgid "newss"
+msgstr "Новости"
+
+#: .\templates\base.html:48 .\templates\contact.html:8
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\templates\base.html:57 .\templates\category\index.html:3
+#: .\templates\category\index.html:6
+msgid "categorys"
+msgstr "Категории"
+
+#: .\templates\base.html:58 .\templates\catalog\create.html:6
+#: .\templates\catalog\edit.html:6 .\templates\catalog\index.html:4
+#: .\templates\catalog\index.html:7
+msgid "catalog"
+msgstr "Каталог"
+
+#: .\templates\base.html:60 .\templates\base.html:68
+#: .\templates\delivery\create.html:6 .\templates\delivery\edit.html:6
+#: .\templates\delivery\list.html:40 .\templates\delivery\read.html:6
+#: .\templates\report\index.html:17 .\templates\report\index.html:148
+msgid "delivery"
+msgstr "Доставка"
+
+#: .\templates\base.html:61 .\templates\report\index.html:4
+#: .\templates\report\index.html:7
+msgid "reports"
+msgstr "Отчеты"
+
+#: .\templates\base.html:66 .\templates\catalog\buy.html:4
+#: .\templates\catalog\buy.html:7
+msgid "My purchases"
+msgstr "Мои покупки"
+
+#: .\templates\base.html:67 .\templates\catalog\basket.html:4
+#: .\templates\catalog\basket.html:7 .\templates\catalog\list.html:10
+msgid "Basket"
+msgstr "Корзина"
+
+#: .\templates\base.html:71 .\templates\registration\my_account.html:4
+#: .\templates\registration\my_account.html:10
+msgid "My account"
+msgstr "Мой аккаунт"
+
+#: .\templates\base.html:72
+#: .\templates\registration\password_change_form.html:9
+#: .\templates\registration\password_change_form.html:15
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\templates\base.html:74
+msgid "Log out"
+msgstr "Выйти"
+
+#: .\templates\base.html:79
+msgid "Log In"
+msgstr "Вход"
+
+#: .\templates\base.html:80 .\templates\registration\signup.html:4
+#: .\templates\registration\signup.html:10
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: .\templates\catalog\basket.html:89 .\templates\catalog\index.html:98
+#: .\templates\category\index.html:26 .\templates\delivery\index.html:36
+#: .\templates\news\index.html:37
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\catalog\basket.html:103 .\templates\catalog\basket.html:119
+msgid "Basket total"
+msgstr "Всего в корзине"
+
+#: .\templates\catalog\basket.html:107
+msgid "Go payment"
+msgstr "Перейти к оплате"
+
+#: .\templates\catalog\basket.html:118
+msgid "Payment method"
+msgstr "Способ оплаты"
+
+#: .\templates\catalog\basket.html:126
+msgid "Card"
+msgstr "Карта"
+
+#: .\templates\catalog\basket.html:130
+msgid "In cash"
+msgstr "Наличными курьеру"
+
+#: .\templates\catalog\basket.html:139
+msgid "Card number"
+msgstr "№ карты"
+
+#: .\templates\catalog\basket.html:146
+msgid "Card holder"
+msgstr ""
+
+#: .\templates\catalog\basket.html:150
+msgid "Expiration date"
+msgstr "Срок действия"
+
+#: .\templates\catalog\basket.html:163
+msgid "Buy"
+msgstr "Купить"
+
+#: .\templates\catalog\basket.html:164 .\templates\catalog\create.html:14
+#: .\templates\catalog\details.html:96 .\templates\catalog\edit.html:14
+#: .\templates\catalog\read.html:83 .\templates\category\create.html:14
+#: .\templates\category\edit.html:14 .\templates\category\read.html:18
+#: .\templates\delivery\create.html:14 .\templates\delivery\edit.html:14
+#: .\templates\delivery\index.html:11 .\templates\delivery\read.html:35
+#: .\templates\news\create.html:14 .\templates\news\edit.html:14
+#: .\templates\news\read.html:45
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\catalog\buy.html:89 .\templates\catalog\details.html:110
+#: .\templates\index.html:207
+msgid "Rating"
+msgstr "Оценка"
+
+#: .\templates\catalog\buy.html:93
+msgid "Rating details"
+msgstr "Детали отзыва"
+
+#: .\templates\catalog\buy.html:97
+msgid "Change Review"
+msgstr "Изменить отзыв"
+
+#: .\templates\catalog\buy.html:97
+msgid "Review"
+msgstr "Отзыв"
+
+#: .\templates\catalog\create.html:3 .\templates\catalog\index.html:18
+#: .\templates\catalog\index.html:106 .\templates\category\create.html:3
+#: .\templates\delivery\create.html:3 .\templates\delivery\index.html:22
+#: .\templates\news\create.html:3 .\templates\news\index.html:15
+#: .\templates\news\index.html:45
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\catalog\create.html:13 .\templates\catalog\edit.html:13
+#: .\templates\category\create.html:13 .\templates\category\edit.html:13
+#: .\templates\delivery\create.html:13 .\templates\delivery\edit.html:13
+#: .\templates\news\create.html:13 .\templates\news\edit.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\catalog\details.html:4 .\templates\catalog\list.html:96
+msgid "Catalog details"
+msgstr "Описание"
+
+#: .\templates\catalog\details.html:83 .\templates\index.html:187
+msgid "Sale Quantity"
+msgstr "Всего продано"
+
+#: .\templates\catalog\details.html:86 .\templates\catalog\details.html:102
+#: .\templates\index.html:199 .\templates\report\index.html:20
+#: .\templates\report\index.html:183
+msgid "Reviews"
+msgstr "Отзывы"
+
+#: .\templates\catalog\details.html:90 .\templates\catalog\list.html:102
+#: .\templates\index.html:184
+msgid "Avg Rating"
+msgstr "Средняя оценка"
+
+#: .\templates\catalog\details.html:108 .\templates\report\index.html:120
+#: .\templates\report\index.html:190
+msgid "Saleday"
+msgstr "Дата продажи"
+
+#: .\templates\catalog\details.html:120
+msgid "No reviews yet"
+msgstr "Пока нет отзывов"
+
+#: .\templates\catalog\edit.html:3 .\templates\catalog\index.html:96
+#: .\templates\category\edit.html:3 .\templates\category\index.html:24
+#: .\templates\delivery\edit.html:3 .\templates\delivery\index.html:34
+#: .\templates\news\edit.html:3 .\templates\news\index.html:35
+msgid "Change"
+msgstr "Изменить"
+
+#: .\templates\catalog\index.html:97 .\templates\catalog\read.html:4
+#: .\templates\category\read.html:3 .\templates\delivery\index.html:35
+#: .\templates\delivery\read.html:3 .\templates\news\read.html:4
+msgid "Read"
+msgstr "Посмотреть"
+
+#: .\templates\catalog\list.html:4 .\templates\catalog\list.html:7
+msgid "Catalog list"
+msgstr "Полный список"
+
+#: .\templates\catalog\list.html:107
+msgid "Add to basket"
+msgstr "Добваить в корзину"
+
+#: .\templates\category\index.html:12
+msgid "Category_title"
+msgstr "Название категории"
+
+#: .\templates\category\index.html:14 .\templates\category\index.html:34
+#: .\templates\delivery\index.html:46
+msgid "Add"
+msgstr "Добавить"
+
+#: .\templates\category\index.html:25 .\templates\news\index.html:36
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\delivery\index.html:3 .\templates\delivery\index.html:12
+#: .\templates\delivery\list.html:3 .\templates\delivery\list.html:7
+msgid "deliverys"
+msgstr "Доставка"
+
+#: .\templates\delivery\index.html:6 .\templates\delivery\list.html:6
+#: .\templates\report\index.html:14 .\templates\report\index.html:113
+msgid "Sale"
+msgstr "Продажа"
+
+#: .\templates\delivery\list.html:22 .\templates\news\index.html:13
+#: .\templates\report\index.html:161
+msgid "title"
+msgstr "Название"
+
+#: .\templates\delivery\read.html:14
+msgid "delivery_title"
+msgstr "Название"
+
+#: .\templates\index.html:4
+msgid "App name"
+msgstr "Fashion"
+
+#: .\templates\index.html:107 .\templates\registration\register_done.html:10
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\index.html:117
+msgid "Full Catalog"
+msgstr "Полный каталог"
+
+#: .\templates\index.html:263
+msgid "all newss"
+msgstr "Все новости"
+
+#: .\templates\news\create.html:6 .\templates\news\edit.html:6
+#: .\templates\news\read.html:7
+msgid "news"
+msgstr "Новости"
+
+#: .\templates\registration\logged_out.html:4
+#: .\templates\registration\login.html:4
+#: .\templates\registration\password_change_done.html:3
+#: .\templates\registration\password_change_form.html:3
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\register_done.html:4
+msgid "App Name"
+msgstr "Fashion"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Logged out!"
+msgstr "Вы вышли!"
+
+#: .\templates\registration\logged_out.html:7
+msgid "Login again"
+msgstr "Зайти заново"
+
+#: .\templates\registration\login.html:7
+msgid "Incorrect login or password"
+msgstr "Неверный логин или пароль"
+
+#: .\templates\registration\login.html:12
+msgid "You dont have access"
+msgstr "У вас нет доступа"
+
+#: .\templates\registration\login.html:14
+msgid "Login to see this page"
+msgstr "Войдите, чтобы увидеть эту страницу"
+
+#: .\templates\registration\login.html:22
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: .\templates\registration\login.html:27
+msgid "Login"
+msgstr "Войти"
+
+#: .\templates\registration\login.html:33
+msgid "Lost password?"
+msgstr "Забыли пароль?"
+
+#: .\templates\registration\login.html:34
+#: .\templates\registration\signup.html:15
+msgid "Create an account"
+msgstr "Создать аккаунт"
+
+#: .\templates\registration\my_account.html:15
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: .\templates\registration\password_change_done.html:5
+msgid "Password changed"
+msgstr "Пароль изменен"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password reset completed!"
+msgstr "Сброс пароля завершен"
+
+#: .\templates\registration\password_reset_complete.html:7
+msgid "Log in again?"
+msgstr "Войти снова"
+
+#: .\templates\registration\password_reset_confirm.html:5
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Password reset confirmation"
+msgstr "Подтверждение сброса пароля"
+
+#: .\templates\registration\password_reset_confirm.html:18
+#: .\templates\registration\password_reset_form.html:10
+#: .\templates\registration\password_reset_form.html:16
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_confirm.html:26
+msgid "Please enter (and confirm) your new password."
+msgstr "Пожалуйста, введите (и подтвердите) новый пароль."
+
+#: .\templates\registration\password_reset_confirm.html:32
+msgid "New password:"
+msgstr "Новый пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:37
+msgid "Confirm password:"
+msgstr "Подтвердите пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:48
+msgid "Password reset failed"
+msgstr "Не удалось сбросить пароль"
+
+#: .\templates\registration\password_reset_confirm.html:49
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Ссылка для сброса пароля недействительна, возможно, из-за того, что "
+"использовано. Пожалуйста, запросите новый сброс пароля."
+
+#: .\templates\registration\password_reset_done.html:6
+msgid "Password reset"
+msgstr "Восстановление пароля"
+
+#: .\templates\registration\password_reset_done.html:7
+msgid "Check your email"
+msgstr "Проверьте свою электронную почту"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Asked password reset email"
+msgstr "Электронная почта для сброса пароля"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Follow the link below:"
+msgstr "Перейдите по ссылке ниже:"
+
+#: .\templates\registration\register_done.html:11
+msgid "Your account has been successfully created."
+msgstr "Ваша учетная запись успешно создана."
+
+#: .\templates\registration\register_done.html:11
+#: .\templates\registration\signup.html:20
+msgid "Log in"
+msgstr "Авторизоваться"
+
+#: .\templates\registration\signup.html:20
+msgid "Already have an account?"
+msgstr "У вас уже есть аккаунт?"
+
+#: .\templates\report\index.html:33 .\templates\report\index.html:122
+#: .\templates\report\index.html:192
+msgid "Category"
+msgstr "Категория"
+
+#: .\templates\report\index.html:34 .\templates\report\index.html:123
+#: .\templates\report\index.html:193
+msgid "Title"
+msgstr "Название"
+
+#: .\templates\report\index.html:35 .\templates\report\index.html:124
+msgid "Price"
+msgstr "Цена"
+
+#: .\templates\report\index.html:36
+msgid "Photo"
+msgstr "Фотография"
+
+#: .\templates\report\index.html:125
+msgid "Quantity"
+msgstr "Количество"
+
+#: .\templates\report\index.html:126
+msgid "Total"
+msgstr "Сумма"

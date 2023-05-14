@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "deliverys" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Sale" %}</h2>
+<h4>{{ view_sale.saleday| date:"d.m.Y"  }}</h4>
+<h4>{{ view_sale.username }}</h4>
+<h4>{{ view_sale.category }}</h4>
+<h4>{{ view_sale.title }}</h4>
+<a class="btn btn-outline-info" style="width:100px" href="{% url 'delivery_list' %}">{% trans "Back" %}</a>    
+<h2>{% trans "deliverys" %}</h2>
+{% if delivery.count > 0 %}
+<div class="row">
+	<table id="myTable" class="table-manager" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "deliveryday" %}</th>
+				<th>{% trans "movement" %}</th>
+				<th>{% trans "delivery_details" %}</th>
+				{% if request.user.groups.all.0.name == "Managers" %}
+				<th><a href="{% url 'delivery_create' view_sale.id %}">{% trans "Create" %}</a></th>				
+				{% endif %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in delivery %}
+			<tr>
+				<td>{{ n.deliveryday | date:"d.m.Y" }}</td>
+				<td>{{ n.movement }}</td>
+				<td>{{ n.details }}</td>
+				{% if request.user.groups.all.0.name == "Managers" %}
+				<td>
+					<a href="{% url 'delivery_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'delivery_read' n.id %}">{% trans "Read" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'delivery_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>	
+				{% endif %}				
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+	{% if request.user.groups.all.0.name == "Managers" %}
+	<a href="{% url 'delivery_create' view_sale.id %}">{% trans "Add" %}</a>
+	{% endif %}
+{% endif %}
+{% endblock content %}

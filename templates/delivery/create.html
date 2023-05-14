@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Create" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "delivery" %}</h2>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+	<br>
+	<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>	
+	<a class="btn btn-outline-info" style="width:100px" href="{% url 'delivery_index' sale_id %}">{% trans "Back" %}</a>    	
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

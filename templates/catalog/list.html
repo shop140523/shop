@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "Catalog list" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Catalog list" %}</h2>
+{% if basket_count > 0 %}
+	<h4>
+		<a class="nav-link" href="{% url 'basket' %}">{% trans "Basket" %} ({{ basket_count }}) </a>	
+	</h4>
+{% endif %}
+
+{% if catalog.count > 0 %}
+<div class="row">
+{% if mess %}
+	{{ mess }}
+{% endif %}
+</div>
+<div class="row-catalog">
+	<table id="myTable" style="width:100%">
+		<thead>
+			<tr>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for c in catalog %}
+			<tr>
+				<td>
+					<div class="card">
+						<div class="card-header">
+							<h5>{{ c.category }}</h5>
+						</div>
+						<div class="card-body">					
+							<div class="row">
+								<div class="col-md-4">
+									{% if c.photo.url == "/media/images/product1.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product1.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product2.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product2.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product3.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product3.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product4.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product4.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product5.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product5.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product6.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product6.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product7.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product7.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product8.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product8.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product9.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product9.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product10.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product10.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product11.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product11.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product12.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product12.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product13.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product13.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product14.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product14.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product15.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product15.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product16.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product16.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product17.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product17.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product18.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product18.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product19.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product19.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product20.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product20.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product21.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product21.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product22.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product22.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product23.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product23.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product24.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product24.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% elif c.photo.url == "/media/images/product25.jpg" %}
+										<img style="width:100%; max-width:400px;" src="{% static 'images/product25.jpg' %}" alt="{{ c.title }}" title="{{ c.details }}">    
+									{% else %}
+										{% if c.photo.url != None %}
+											<img style="width:100%; max-width:400px;" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
+										{% endif %}
+									{% endif %}
+								</div>
+								<div class="col-md-6">
+									<h5 class="card-title"><strong>{{ c.title }}</strong></h5>
+									<a class="btn btn-outline-info" href="{% url 'catalog_details' c.id %}">{% trans "Catalog details" %}</a>
+								</div>
+								<div class="col-md-2">
+									<h4 class="card-title"><strong>{{ c.price }}</strong> 〒</h4>
+									{% if c.avg_rating != None %}
+										<p><div class="Stars" style='--rating: {{ c.avg_rating | stringformat:".1f" }};'></div></p>							
+										<h6 class="card-title"><strong>{% trans "Avg Rating" %}</strong> {{ c.avg_rating | floatformat:1 }}</h6>
+									{% endif %}
+									{% if user.is_authenticated %}
+									<form method="post">
+										{% csrf_token %}
+										<button type="submit" name="btn{{ c.id }}" id="btn_id{{ c.id }}" class="btn btn-outline-success" >{% trans "Add to basket" %}</button>						
+										<input hidden type="text" name="catalog_id" size="0" value="{{ c.id }}">
+										<input hidden type="text" name="price" size="0" value="{{ c.price }}">
+										<input hidden type="text" name="user" size="0" value="{{ user.id }}">
+									</form>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							
+						</div>
+					</div>
+				</td>	
+			</tr>
+			{% endfor %}	
+		</tbody>
+	</table>	
+</div>
+{% endif %}
+{% endblock content %}
+
