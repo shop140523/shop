@@ -84,9 +84,48 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 3
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Прекрасный цвет, глубокий чесночный, хороший фасон. Цена)))'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
+    sale.save()
+
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday 
+    delivery.movement = 'Заявка принята в обработку'
+    delivery.details='Заявка принята в обработку'
+    delivery.save()
+    delivery.deliveryday = sale.saleday
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заказ в пути'
+    delivery.details='Заказ в пути'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=0.5)
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заявка закрыта, заказ доставлен'
+    delivery.details='Заявка закрыта, заказ доставлен'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=1)
+    delivery.save()
+        
+    sale = Sale()
+    #sale.saleday = datetime.now() 
+    sale.catalog = catalog
+    sale.price = catalog.price
+    sale.quantity = 1
+    sale.user_id = 13
+    sale.rating = 5
+    sale.details='Понравился цвет, влагооталкивающая ткань, наличие внутреннего кармана. Качество пошива. Этот бренд люблю. Цена тоже привлекательна.'
+    sale.save()
+    sale.saleday = datetime.now() - timedelta(days=31)
     sale.save()
 
     delivery = Delivery()
@@ -133,7 +172,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 4
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Катышки,но за свою цену это можно простить'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -186,9 +225,48 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 5
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Достоинства:Удобно. Недостатки:Нет!!'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
+    sale.save()
+
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday 
+    delivery.movement = 'Заявка принята в обработку'
+    delivery.details='Заявка принята в обработку'
+    delivery.save()
+    delivery.deliveryday = sale.saleday
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заказ в пути'
+    delivery.details='Заказ в пути'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=0.5)
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заявка закрыта, заказ доставлен'
+    delivery.details='Заявка закрыта, заказ доставлен'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=1)
+    delivery.save()
+
+    sale = Sale()
+    #sale.saleday = datetime.now() 
+    sale.catalog = catalog
+    sale.price = catalog.price
+    sale.quantity = 1
+    sale.user_id = 15
+    sale.rating = 5
+    sale.details='Отличное платье! Рекомендую!'
+    sale.save()
+    sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
 
     delivery = Delivery()
@@ -234,8 +312,8 @@ def beginning(apps, schema_editor):
     sale.price = catalog.price
     sale.quantity = 1
     sale.user_id = 6
-    sale.rating = 5
-    sale.details='Отзыв'
+    sale.rating = 4
+    sale.details='Достоинства:Отлично сидит, скрывает недостатки. Недостатки:Внутренний слой ощущается как синтетика'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -287,8 +365,48 @@ def beginning(apps, schema_editor):
     sale.price = catalog.price
     sale.quantity = 1
     sale.user_id = 7
+    sale.rating = 4
+    sale.details='Достоинства:Ткань хороший. Недостатки:Швы кривые'
+    sale.save()
+    sale.saleday = datetime.now() - timedelta(days=30)
+    sale.save()
+
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday 
+    delivery.movement = 'Заявка принята в обработку'
+    delivery.details='Заявка принята в обработку'
+    delivery.save()
+    delivery.deliveryday = sale.saleday
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заказ в пути'
+    delivery.details='Заказ в пути'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=0.5)
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заявка закрыта, заказ доставлен'
+    delivery.details='Заявка закрыта, заказ доставлен'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=1)
+    delivery.save()
+
+    
+    sale = Sale()
+    #sale.saleday = datetime.now() 
+    sale.catalog = catalog
+    sale.price = catalog.price
+    sale.quantity = 1
+    sale.user_id = 17
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Удобная, мягкий материал, оригинальный фасон (можно регулировать длину футболки и рукавов). Приятный цвет. Качественно сшито.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -337,7 +455,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 8
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Приятный ,мягкий материал. Соответствует размеру. Красивый тёмно-серый цвет. Рукава и низ кофты можно подвернуть при помощи пришитых пуговиц. И кофта будет смотреться ещё интересней.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -390,7 +508,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 9
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Супер качество! Сделаны очень аккуратно!! Снаружи гладкие! Выглядят очень дорого! Не ожидала такого хорошего качества за такте деньги'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -439,7 +557,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 10
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Качественные, тёплые'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -492,7 +610,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 11
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Ткань плотная, не мнется'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -541,7 +659,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 12
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='хорошая плотная ткань, красиво и ровно сшита, нет торчащих ниток, дырок или других дефектов. смотрится строго, но стильно.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -594,7 +712,46 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 13
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Хороший качественный пиджак , приятная ткань не сильно мнется , держит форму , сел идеально 👍🏼 рекомендую'
+    sale.save()
+    sale.saleday = datetime.now() - timedelta(days=30)
+    sale.save()
+
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday 
+    delivery.movement = 'Заявка принята в обработку'
+    delivery.details='Заявка принята в обработку'
+    delivery.save()
+    delivery.deliveryday = sale.saleday
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заказ в пути'
+    delivery.details='Заказ в пути'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=0.5)
+    delivery.save()
+    
+    delivery = Delivery()
+    delivery.sale = sale
+    #delivery.deliveryday = sale.saleday
+    delivery.movement = 'Заявка закрыта, заказ доставлен'
+    delivery.details='Заявка закрыта, заказ доставлен'
+    delivery.save()
+    delivery.deliveryday = sale.saleday + timedelta(hours=1)
+    delivery.save()
+
+    sale = Sale()
+    #sale.saleday = datetime.now() 
+    sale.catalog = catalog
+    sale.price = catalog.price
+    sale.quantity = 1
+    sale.user_id = 23
+    sale.rating = 5
+    sale.details='Качественная ткань, ровные швы, отличный пошив, ничего нигде не тянет и не торчит, сидит идеально'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -643,7 +800,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 14
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Приятная ткань, не мнётся, не скатывается'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -696,7 +853,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 15
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Приятный материал . Длинный рукав.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -744,8 +901,8 @@ def beginning(apps, schema_editor):
     sale.price = catalog.price
     sale.quantity = 1
     sale.user_id = 16
-    sale.rating = 5
-    sale.details='Отзыв'
+    sale.rating = 4
+    sale.details='Отлично сидит, как влитой). Недостатки:С изнанки швы неоверложены. Торчат ниточки. Но за эту цену. . Нормуль)'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -798,7 +955,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 17
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Плотная, аккуратно сшитая. Очень красивая. Натуральная. Надеюсь, после стирок не поменяется. '
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -847,7 +1004,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 18
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Тонкий трикотаж ,качественный принт ,хороший пошив .'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -900,7 +1057,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 19
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Быстрая доставка, качество на высоте, мягкая, приятная к телу. Размер в размер.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -949,7 +1106,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 20
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Приятный к телу мягкий хлопок после стирки не линяет и не окрашивает.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -1002,7 +1159,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 21
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Отличное качество, всё соответствует фотографиям. Размер тоже соответствует.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -1051,7 +1208,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 22
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Легкий, яркий, практичный от любимого бренда.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -1104,7 +1261,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 23
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Отличный кардиган. Цвет. Фасон . Качество.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -1153,7 +1310,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 24
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Кардиган замечательный,все как на фото.После прочтения некоторых отзывов немного засомневалась в заказе,но все хорошо ,мягенький,цвет тоже приятный,советую всем.'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
@@ -1206,7 +1363,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 25
     sale.rating = 5
-    sale.details='Отзыв!!'
+    sale.details='Первый комбинезон, который сел просто идеально, длина штанин, рукавов идеальна'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=30)
     sale.save()
@@ -1255,7 +1412,7 @@ def beginning(apps, schema_editor):
     sale.quantity = 1
     sale.user_id = 26
     sale.rating = 5
-    sale.details='Отзыв'
+    sale.details='Хороший плотны комбез. Идеален для прогулок с ребёнком и поездок'
     sale.save()
     sale.saleday = datetime.now() - timedelta(days=29)
     sale.save()
