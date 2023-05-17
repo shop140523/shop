@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-14 12:09+0600\n"
+"POT-Creation-Date: 2023-05-17 15:29+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,9 +29,9 @@ msgid "Value must start with a capital letter"
 msgstr "Значение должно начинаться с заглавной буквы"
 
 #: .\product\forms.py:49 .\product\models.py:141
-#: .\templates\category\create.html:6 .\templates\category\edit.html:6
-#: .\templates\category\read.html:6 .\templates\delivery\list.html:21
-#: .\templates\report\index.html:160
+#: .\templates\catalog\list.html:24 .\templates\category\create.html:6
+#: .\templates\category\edit.html:6 .\templates\category\read.html:6
+#: .\templates\delivery\list.html:21 .\templates\report\index.html:160
 msgid "category"
 msgstr "Категория"
 
@@ -47,7 +47,8 @@ msgstr "Описание товара"
 
 #: .\product\forms.py:52 .\product\models.py:46 .\product\models.py:68
 #: .\product\models.py:88 .\product\models.py:109 .\product\models.py:144
-#: .\templates\catalog\index.html:16
+#: .\templates\catalog\index.html:16 .\templates\catalog\list.html:61
+#: .\templates\catalog\list.html:63
 msgid "price"
 msgstr "Цена"
 
@@ -105,6 +106,7 @@ msgid "saleday"
 msgstr "Дата продажи"
 
 #: .\product\models.py:112 .\product\models.py:148
+#: .\templates\catalog\list.html:66 .\templates\catalog\list.html:68
 #: .\templates\report\index.html:194
 msgid "rating"
 msgstr "Оценка"
@@ -174,7 +176,7 @@ msgstr "Детали новости"
 msgid "photo_news"
 msgstr "Фотография"
 
-#: .\product\views.py:197
+#: .\product\views.py:235
 msgid "Item added to basket"
 msgstr "Товар добавлен в корзину"
 
@@ -340,7 +342,7 @@ msgstr "Создать"
 msgid "Save"
 msgstr "Сохранить"
 
-#: .\templates\catalog\details.html:4 .\templates\catalog\list.html:96
+#: .\templates\catalog\details.html:4 .\templates\catalog\list.html:172
 msgid "Catalog details"
 msgstr "Описание"
 
@@ -354,7 +356,7 @@ msgstr "Всего продано"
 msgid "Reviews"
 msgstr "Отзывы"
 
-#: .\templates\catalog\details.html:90 .\templates\catalog\list.html:102
+#: .\templates\catalog\details.html:90 .\templates\catalog\list.html:178
 #: .\templates\index.html:184
 msgid "Avg Rating"
 msgstr "Средняя оценка"
@@ -385,9 +387,35 @@ msgstr "Посмотреть"
 msgid "Catalog list"
 msgstr "Полный список"
 
-#: .\templates\catalog\list.html:107
+#: .\templates\catalog\list.html:18
+msgid "Search"
+msgstr "Поиск"
+
+#: .\templates\catalog\list.html:41 .\templates\catalog\list.html:56
+#: .\templates\catalog\list.html:58 .\templates\delivery\list.html:22
+#: .\templates\news\index.html:13 .\templates\report\index.html:161
+msgid "title"
+msgstr "Название"
+
+#: .\templates\catalog\list.html:51
+msgid "Sort"
+msgstr "Сортировка"
+
+#: .\templates\catalog\list.html:77
+msgid "desc"
+msgstr "В обратном порядке"
+
+#: .\templates\catalog\list.html:84
+msgid "Go"
+msgstr "Выполнить"
+
+#: .\templates\catalog\list.html:85
+msgid "Reset"
+msgstr "Сброс"
+
+#: .\templates\catalog\list.html:183
 msgid "Add to basket"
-msgstr "Добваить в корзину"
+msgstr "Добавить в корзину"
 
 #: .\templates\category\index.html:12
 msgid "Category_title"
@@ -411,11 +439,6 @@ msgstr "Доставка"
 #: .\templates\report\index.html:14 .\templates\report\index.html:113
 msgid "Sale"
 msgstr "Продажа"
-
-#: .\templates\delivery\list.html:22 .\templates\news\index.html:13
-#: .\templates\report\index.html:161
-msgid "title"
-msgstr "Название"
 
 #: .\templates\delivery\read.html:14
 msgid "delivery_title"
@@ -596,3 +619,6 @@ msgstr "Количество"
 #: .\templates\report\index.html:126
 msgid "Total"
 msgstr "Сумма"
+
+#~ msgid "available"
+#~ msgstr "Доступно"

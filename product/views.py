@@ -172,33 +172,71 @@ def catalog_index(request):
 #@login_required
 def catalog_list(request):
     try:
+        # Категории товара (для поиск)
+        category = Category.objects.all().order_by('title')
         # Только доступный товар
-        catalog = ViewCatalog.objects.order_by('title')
+        catalog = ViewCatalog.objects.all()
         # Подчситать количество товара в корзине доступны записи только текущего пользователя
         # Текущий пользователь
         _user_id = request.user.id
         basket_count = Basket.objects.filter(user_id=_user_id).count()
         #print(basket_count)        
         if request.method == "POST":
-            # Выделить id товара
-            catalog_id = request.POST.dict().get("catalog_id")
-            #print("catalog_id ", catalog_id)
-            price = request.POST.dict().get("price")
-            #print("price ", price)
-            user = request.POST.dict().get("user")
-            #print("user ", user)
-            # Отправить товар в корзину
-            basket = Basket()
-            basket.catalog_id = catalog_id
-            basket.price = float(int(price.replace(",00","")))
-            #basket.price = price
-            basket.user_id = user
-            basket.save()
-            message = _('Item added to basket')
-            basket_count = Basket.objects.filter(user_id=_user_id).count()
-            return render(request, "catalog/list.html", {"catalog": catalog, "mess": message, "basket_count": basket_count })
+            # Определить какая кнопка нажата
+            if 'searchBtn' in request.POST:
+                # Поиск по категории товара
+                selected_item_category = request.POST.get('item_category')
+                #print(selected_item_category)
+                if selected_item_category != '-----':
+                    catalog = catalog.filter(category=selected_item_category).all()
+                # Поиск по названию товара
+                catalog_search = request.POST.get("catalog_search")
+                #print(catalog_search)                
+                if catalog_search != '':
+                    catalog = catalog.filter(title__contains = catalog_search).all()
+                # Сортировка
+                sort = request.POST.get('radio_sort')
+                #print(sort)
+                direction = request.POST.get('checkbox_sort_desc')
+                #print(direction)
+                if sort=='title':                    
+                    if direction=='ok':
+                        catalog = catalog.order_by('-title')
+                    else:
+                        catalog = catalog.order_by('title')
+                elif sort=='price':                    
+                    if direction=='ok':
+                        catalog = catalog.order_by('-price')
+                    else:
+                        catalog = catalog.order_by('price')
+                elif sort=='rating':                    
+                    if direction=='ok':
+                        catalog = catalog.order_by('-avg_rating')
+                    else:
+                        catalog = catalog.order_by('avg_rating')
+                return render(request, "catalog/list.html", {"catalog": catalog, "category": category, "basket_count": basket_count, "selected_item_category": selected_item_category, "catalog_search": catalog_search , "sort": sort, "direction": direction })
+            elif 'resetBtn' in request.POST:   
+                return render(request, "catalog/list.html", {"catalog": catalog, "category": category, "basket_count": basket_count })
+            else:
+                # Выделить id товара
+                catalog_id = request.POST.dict().get("catalog_id")
+                #print("catalog_id ", catalog_id)
+                price = request.POST.dict().get("price")
+                #print("price ", price)
+                user = request.POST.dict().get("user")
+                #print("user ", user)
+                # Отправить товар в корзину
+                basket = Basket()
+                basket.catalog_id = catalog_id
+                basket.price = float(int(price.replace(",00","")))
+                #basket.price = price
+                basket.user_id = user
+                basket.save()
+                message = _('Item added to basket')
+                basket_count = Basket.objects.filter(user_id=_user_id).count()
+                return render(request, "catalog/list.html", {"catalog": catalog, "category": category, "mess": message, "basket_count": basket_count })         
         else:
-            return render(request, "catalog/list.html", {"catalog": catalog, "basket_count": basket_count })
+            return render(request, "catalog/list.html", {"catalog": catalog, "category": category, "basket_count": basket_count })     
     except Exception as exception:
         print(exception)
         return HttpResponse(exception)

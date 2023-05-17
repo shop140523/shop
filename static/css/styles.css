@@ -249,6 +249,43 @@ pre {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Таблица каталог */
+.table-catalog {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+}
+.table-catalog tbody  {
+	background: var(--main-background-color-light);
+}
+.table-catalog thead th {
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+	background-image: linear-gradient(top, var(--main-background-color-dark), var(--main-background-color-light));
+	background-image: -o-linear-gradient(top, var(--main-background-color-dark), var(--main-background-color-light));
+    background-image: -moz-linear-gradient(top, var(--main-background-color-dark), var(--main-background-color-light));
+    background-image: -webkit-linear-gradient(top, var(--main-background-color-dark), var(--main-background-color-light));
+}
+.table-catalog thead tr th:first-child {
+	border-radius: 2px 0 0 2px;
+}
+.table-catalog thead tr th:last-child {
+	border-radius: 0 2px 2px 0;
+}
+.table-catalog tbody td {
+	text-align: left;
+	border: none;
+	padding: 5px 10px;
+	vertical-align: top;
+}
+.table-catalog tbody tr:nth-child(odd){
+	background: var(--main-background-color-light);
+}
+.table-catalog tbody tr:nth-child(even){
+	background: var(--main-background-color-light);
+}
+
 /* Таблица для менеджера (в закрытой части сайта)*/
 .table-manager {
 	width: 100%;
